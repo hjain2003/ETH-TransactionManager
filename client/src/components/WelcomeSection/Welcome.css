@@ -120,5 +120,11 @@
     color: white;
     width: 120px;
     cursor: pointer;
+    height: 50px;
+    font-size: 17px;
     border-radius: 10px;
+    border: none;
+}
+#submit:hover{
+    background-color: rgb(238, 66, 247);
 }
