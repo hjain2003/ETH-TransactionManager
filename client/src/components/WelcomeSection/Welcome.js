@@ -1,7 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './Welcome.css';
+import { TransactionContext } from '../../context/TransactionContext';
 
 const Welcome = () => {
+  const {connectWallet,connectedAccount} = useContext(TransactionContext);
+
+  // console.log(values);
+
   const [trans_details, settrans_details] = useState({
     address_to : "",
     amount : "",
@@ -29,7 +34,10 @@ const Welcome = () => {
         <div className="tagline_connect">
           <h1>Seamlessly Manage Your ETH Transactions</h1>
           <br />
-          <button className="connect">Connect Your Wallet</button>
+          {
+            !connectedAccount &&
+          <button className="connect" onClick={connectWallet}>Connect Your Wallet</button>
+          }
           <br />
           <div className="card">
             <b>Your Wallet Address </b>
