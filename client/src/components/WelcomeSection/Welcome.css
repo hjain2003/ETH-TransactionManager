@@ -1,0 +1,124 @@
+@font-face {
+    font-family: sfmono_heavy;
+    src: url('../../fonts/SFMono-Heavy.otf');
+}
+@font-face {
+    font-family: sfmono_medium;
+    src: url('../../fonts/SFMono-Medium.otf');
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.wel_container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    /* flex-direction: row; */
+    flex-direction: column;
+}
+
+.navbar{
+    height: 69px;
+    border-bottom: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.wel_container h1{
+    color: rgb(96, 247, 211);
+    font-size: 60px;
+    font-family: 'sfmono_heavy';
+    /* margin-top: 15px; */
+    /* position: absolute; */
+    /* margin-top: 100px; */
+}
+
+.content{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /* border: 2px solid red; */
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 80px;
+}
+.tagline_connect,.address_form{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid greenyellow; */
+    height:500px;
+    width: 470px;
+    padding: 10px;
+}
+
+.tagline_connect h1{
+    font-size: 50px;
+    color: white;
+}
+.connect{
+    background-color: rgb(71, 95, 249);
+    color: white;
+    border-radius: 7px;
+    font-size: 20px;
+    padding: 10px;
+    /* width: 100px; */
+    cursor: pointer;
+    height: 60px;
+}
+
+.address_form{
+    /* align-items: center; */
+    /* background-color: aquamarine; */
+}
+.card{
+    height: 140px;
+    width: 270px;
+    border-radius: 15px;
+    padding: 10px;
+    color: purple;
+    font-size: 17px;
+    background-color: rgb(145, 203, 219);
+}
+.card b{
+    background-color:rgb(145, 203, 219); ;
+}
+
+.trans_details{
+    /* border: 2px solid white; */
+    width:400px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: rgb(0, 4, 110);
+    border-radius: 20px;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.trans_details form{
+    background-color:rgb(0, 4, 110);
+    color: black;
+}
+.trans_details input{
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    /* border-radius: 20px; */
+    width: 380px;
+    color: black;
+    background-color: lightblue;
+}
+#submit{
+    background-color: rgb(155, 0, 147);
+    color: white;
+    width: 120px;
+    cursor: pointer;
+    border-radius: 10px;
+}
