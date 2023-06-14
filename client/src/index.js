@@ -4,13 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { TransactionProvider } from './context/TransactionContext';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <TransactionProvider>
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>
+    </BrowserRouter>
   </TransactionProvider>
 );
 

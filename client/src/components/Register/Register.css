@@ -1,0 +1,36 @@
+.register_box{
+    height:310px;
+    width:300px;
+    /* border:2px solid black; */
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    color: red;
+    transform: translate(-50%, -50%);
+    background-color:rgb(153, 207, 246);
+    padding: 10px;
+}
+.register_box h1{
+    font-size: 20px;
+    background-color:rgb(153, 207, 246); 
+}
+.register_box input{
+    padding: 5px;
+    border: none;
+    background-color:rgb(102, 178, 233); 
+}
+
+#submit{
+    padding: 7px;
+    cursor: pointer;
+    border-radius: 5px;
+    /* background-color:rgb(153, 207, 246); ; */
+    background-color: purple;
+}
+.register_box form{
+    background-color:rgb(153, 207, 246); ;
+}
+.register_box form span{
+    background-color:rgb(153, 207, 246); ;
+}
