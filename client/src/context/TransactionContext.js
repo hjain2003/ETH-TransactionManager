@@ -22,6 +22,9 @@ const getEthereumContract = () => {
 
 export const TransactionProvider = ({ children }) => {
     const [connectedAccount, setConnectedAccount] = useState('');
+    const [TransactionState, setTransactionState] = useState('');
+    const [TransactionHash, setTransactionHash] = useState('');
+    const [balance, setBalance] = useState('');
     const [formData, setFormData] = useState({
       addressTo: '',
       amount: '',
@@ -47,6 +50,12 @@ export const TransactionProvider = ({ children }) => {
   
         if (accounts.length) {
           setConnectedAccount(accounts[0]);
+          const provider = new ethers.providers.Web3Provider(ethereum);
+          const balance = await provider.getBalance(accounts[0]);
+          const formattedBalance = ethers.utils.formatEther(balance);
+          const roundedBalance = parseFloat(formattedBalance).toFixed(5);
+          setBalance(roundedBalance);
+          
         } else {
           console.log('No account found');
         }
@@ -94,9 +103,12 @@ export const TransactionProvider = ({ children }) => {
         const transactionHash = await transactionContract.addToBlockchain(addressTo, parsedAmount, keyword, message);
         setisLoading(true);
         console.log(`loading:  ${transactionHash.hash}`);
+        setTransactionState('SENDING ...');
         await transactionHash.wait();
         setisLoading(false);
         console.log(`success:  ${transactionHash.hash}`);
+        setTransactionState('ETH TRANSFERRED SUCCESSFULLY!');
+        setTransactionHash(transactionHash)
     
         const transactionCount = await transactionContract.getTransactionCount();
     
@@ -112,7 +124,7 @@ export const TransactionProvider = ({ children }) => {
     }, []);
   
     return (
-      <TransactionContext.Provider value={{ connectWallet, connectedAccount, formData, setFormData, handleChange, sendTransaction }}>
+      <TransactionContext.Provider value={{ connectWallet, connectedAccount, formData, setFormData, handleChange, sendTransaction, TransactionState, TransactionHash : TransactionHash.hash, balance }}>
         {children}
       </TransactionContext.Provider>
     );

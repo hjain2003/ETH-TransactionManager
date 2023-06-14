@@ -13,7 +13,7 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
 );
 
 const Welcome = () => {
-  const { connectWallet, connectedAccount, handleChange, sendTransaction, formData } = useContext(TransactionContext);
+  const { connectWallet, connectedAccount, handleChange, sendTransaction, formData, TransactionState, TransactionHash, balance} = useContext(TransactionContext);
 
   const handleSubmit = (e) => {
     const { addressTo, amount, keyword, message } = formData;
@@ -22,6 +22,8 @@ const Welcome = () => {
     sendTransaction();
     console.log('done');
   };
+
+  console.log(balance);
 
   return (
     <div className="wel_container">
@@ -36,7 +38,9 @@ const Welcome = () => {
           {!connectedAccount && <button className="connect" onClick={connectWallet}>Connect Your Wallet</button>}
           <br />
           <div className="card">
-            <b>Your Wallet Address </b>
+            <b>Your Wallet Address <br /> <span className="curr_acc">{connectedAccount} </span> </b>
+            <br /><br />
+            <b>Your current balance : <span className='curr_acc'>{balance} ETH</span></b>
           </div>
         </div>
 
@@ -48,10 +52,17 @@ const Welcome = () => {
               <Input type="text" placeholder="Keyword" name="keyword" handleChange={handleChange} /><br /><br />
               <Input type="text" placeholder="Message..." name="message" handleChange={handleChange} /><br /><br />
               <button id="submit" onClick={handleSubmit}>Transact</button>
+              <span className="transactionState">&nbsp;&nbsp; {TransactionState}</span>
+              <br />
+              {/* <span className='transactionState'>{TransactionHash}</span> */}
             </form>
           </div>
         </div>
       </div>
+      {
+        TransactionHash &&
+      <div className="trans_hash"><b>TRANSACTION_HASH: </b>&nbsp;{TransactionHash}</div>
+      }
     </div>
   );
 };

@@ -78,15 +78,21 @@
 }
 .card{
     height: 140px;
-    width: 270px;
+    width: 320px;
     border-radius: 15px;
     padding: 10px;
     color: purple;
     font-size: 17px;
     background-color: rgb(145, 203, 219);
+    word-wrap: break-word;
 }
 .card b{
-    background-color:rgb(145, 203, 219); ;
+    background-color:rgb(145, 203, 219); 
+}
+.curr_acc{
+    /* font-weight: 100; */
+    color: blue;
+    background-color: rgb(145, 203, 219); 
 }
 
 .trans_details{
@@ -127,4 +133,25 @@
 }
 #submit:hover{
     background-color: rgb(238, 66, 247);
+}
+
+.transactionState{
+    background-color: rgb(0, 4, 110);
+    color: aqua;
+    font-weight: bold;
+}
+
+.trans_hash{
+    background-color: aqua;
+    width: 740px;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    margin: auto;
+    margin-top: -60px;
+}
+
+.trans_hash b{
+    background-color: aqua;
+
 }
