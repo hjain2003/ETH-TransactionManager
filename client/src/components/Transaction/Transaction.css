@@ -2,3 +2,34 @@
     height: 100vh;
     width: 100%;
 }
+.TransContainer h1{
+    color: rgb(96, 247, 211);
+    margin-left: 50px;
+}
+.transactions{
+    margin-left: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+    gap: 90px; /* Adjust the gap between grid items as needed */
+}
+.transaction_card{
+    color: white;
+    background: purple;
+    height: 140px;
+    width: 290px;
+    padding: 5px;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+.transaction_card a{
+    color: white;
+    text-decoration: none;
+    background-color: purple;
+}
+.transaction_card b{
+    background-color: purple;
+}
+.transaction_card hr{
+    background-color: rgb(221, 67, 221);
+    border: 0.1px solid rgb(221, 67, 221);
+}
