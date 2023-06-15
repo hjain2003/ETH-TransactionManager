@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 
-const Authenticate = async(req,res,next)=>{
+export const Authenticate = async(req,res,next)=>{
     try{
         const token = req.cookies.jwtoken;
         const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
@@ -23,4 +23,4 @@ const Authenticate = async(req,res,next)=>{
     }
 };
 
-module.exports = Authenticate;
+// module.exports = Authenticate;

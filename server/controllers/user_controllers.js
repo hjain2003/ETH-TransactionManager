@@ -51,6 +51,7 @@ export const login = async(req, res)=>{
             if(isMatch){
                 console.log(userLogin);
                 
+                
                 const token = await userLogin.generateAuthToken();
                 console.log(token);
                 res.cookie("jwtoken",token,{
@@ -72,3 +73,7 @@ export const login = async(req, res)=>{
         console.log(err);
     }
 }
+
+export const welcome = async(req,res)=>{
+    res.send(req.rootUser);
+};
