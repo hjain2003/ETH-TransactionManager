@@ -27,7 +27,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+}
+.navbar a{
+    position: absolute;
+    right: 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: red;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .wel_container h1{
     color: rgb(96, 247, 211);
@@ -39,7 +52,7 @@
 }
 
 .user_name{
-    color: white;
+    color: yellow;
     background-color: black;
     font-weight: bold;
     font-size: 25px;

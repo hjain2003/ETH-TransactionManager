@@ -77,3 +77,8 @@ export const login = async(req, res)=>{
 export const welcome = async(req,res)=>{
     res.send(req.rootUser);
 };
+
+export const logout = async(req,res)=>{
+    res.clearCookie('jwtoken',{path:'/'})
+    res.status(200).json({message : "user logged out"});
+}

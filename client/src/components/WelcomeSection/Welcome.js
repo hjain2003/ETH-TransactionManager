@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import './Welcome.css';
 import { TransactionContext } from '../../context/TransactionContext';
 // import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Input = ({ placeholder, name, type, value, handleChange }) => (
   <input
@@ -64,10 +64,11 @@ const Welcome = () => {
     <div className="wel_container">
       <nav className="navbar">
         <h1 align="center">ETH Transaction Manager</h1>
+        <NavLink to='/logout'>Logout</NavLink>
       </nav>
-      <span className='user_name'>Hello {userData.name}</span>
       <div className="content">
         <div className="tagline_connect">
+      <span className='user_name'>Hello {userData.name}</span>
           <h1>Seamlessly Manage Your ETH Transactions</h1>
           <br />
           {!connectedAccount && <button className="connect" onClick={connectWallet}>Connect Your Wallet</button>}
