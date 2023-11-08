@@ -1,2 +1,2 @@
 # ETH-TransactionManager
-A simple webapp for ETH transactions and tracking transaction history
+A simple webapp to make ETH transactions and tracking transaction history made using MERN and Solidity
